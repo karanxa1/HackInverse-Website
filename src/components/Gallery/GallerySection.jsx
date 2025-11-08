@@ -76,7 +76,7 @@ const GallerySection = () => {
       />
 
       <div className="frames-container">
-        {frames.map((frame) => (
+        {frames.map((frame, index) => (
           <div
             key={frame.id}
             className={`polaroid-frame ${frame.isCenter ? 'center-frame' : ''}`}
@@ -86,6 +86,9 @@ const GallerySection = () => {
               transform: `translate(-50%, -50%) rotate(${positions[frame.id].rotate}deg)`,
               zIndex: frame.isCenter ? 1 : 3,
             }}
+            data-aos={frame.isCenter ? "zoom-in" : "fade-in"}
+            data-aos-delay={frame.isCenter ? 0 : index * 100}
+            data-aos-duration="800"
             onMouseDown={(e) => handleStart(e, frame.id)}
             onMouseMove={(e) => handleMove(e, frame.id)}
             onMouseUp={() => handleEnd(frame.id)}
