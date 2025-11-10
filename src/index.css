@@ -1,1 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Outfit:wght@100..900&family=Poppins&display=swap');
 @import "tailwindcss";
+
+:root {
+  --font-merriweather: "Merriweather", sans-serif; 
+}
+.merriweather {
+  font-family: var(--font-merriweather);
+}
+

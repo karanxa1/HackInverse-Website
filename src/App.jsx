@@ -1,14 +1,13 @@
-import './App.css'
+import Parallax from "./components/Parallax/Parallax";
 
 function App() {
-
   return (
-   <>
-   <div className='bg-black text-white w-screen h-screen flex justify-center items-center'>
-    <div>HackInverse</div>
-   </div>
-   </>
-  )
+    <>
+      <div>
+        <Parallax/>
+      </div>
+    </>
+  );
 }
 
-export default App
+export default App;
