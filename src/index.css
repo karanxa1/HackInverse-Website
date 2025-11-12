@@ -1,10 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Outfit:wght@100..900&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 @import "tailwindcss";
 
 :root {
   --font-merriweather: "Merriweather", sans-serif; 
+  --font-alata: "Alata", sans-serif;
+  --redColor: #FF0505;
 }
 .merriweather {
   font-family: var(--font-merriweather);
 }
 
+.alata {
+  font-family: var(--font-alata);
+}
+
+@font-face {
+  font-family: "StrangerThings";
+  src: url("./assets/fonts/Stranger-Things-Outlined.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+.stranger-things {
+  font-family: "StrangerThings", sans-serif;
+}
+
+.font-red {
+  color: var(--redColor);
+}
+
+.background-red {
+  background-color: var(--redColor);
+}
+
+.background-dark {
+  background-color: #222222;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 0.5px var(--redColor);
+  letter-spacing: 0.05em;
+}
+
+@media (min-width: 768px) {
+  .text-stroke {
+    -webkit-text-stroke: 3px var(--redColor);
+  }
+}

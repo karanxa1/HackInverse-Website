@@ -1,11 +1,10 @@
 import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import './Parallax.css'
+import "./Parallax.css";
 
 function Parallax() {
-
-    const [background, setBackground] = useState(20)
+    const [background, setBackground] = useState(20);
 
     const parallaxRef = useRef(null);
     const mountain3 = useRef(null);
@@ -31,7 +30,7 @@ function Parallax() {
                     scrub: true,
                     pin: true,
                     onUpdate: (self) => {
-                        setBackground(Math.ceil(self.progress * 100 + 20))
+                        setBackground(Math.ceil(self.progress * 100 + 20));
                     },
                 },
             });
@@ -67,7 +66,7 @@ function Parallax() {
                 cloudsBottom.current,
                 {
                     opacity: 0,
-                    duration: 0.5
+                    duration: 0.5,
                 },
                 0
             );
@@ -98,7 +97,7 @@ function Parallax() {
                 copy.current,
                 {
                     y: "-250%",
-                    opacity: 1
+                    opacity: 1,
                 },
                 0
             );
@@ -115,22 +114,81 @@ function Parallax() {
 
     return (
         <div className="parallax-outer">
-            <div ref={parallaxRef} style={{ background: `linear-gradient(#111220, #282A57 ${background}%, #162D3D)` }} className='parallax'>
-                <img ref={mountain3} className='mountain-3' src="/parallax/mountain3.svg" />
-                <img ref={mountain2} className='mountain-2' src="/parallax/mountain-2.svg" />
-                <img ref={mountain1} className='mountain-1' src="/parallax/mountain-1.svg" />
-                <img ref={sun} className='sun' src="/parallax/sun.svg" />
-                <img ref={cloudsBottom} className='clouds-bottom' src="/parallax/cloud-bottom.svg" />
-                <img ref={cloudsLeft} className='clouds-left' src="/parallax/clouds-left.svg" />
-                <img ref={cloudsRight} className='clouds-right' src="/parallax/clouds-right.svg" />
-                <img ref={stars} className='stars' src="/parallax/stars.svg" />
-                <div ref={copy} className="copy">
-                    <h1 className="merriweather">HACKINVERSE</h1>
-                    <span ref={btn}>Discover more</span>
+            <div
+                ref={parallaxRef}
+                style={{
+                    background: `linear-gradient(#111220, #282A57 ${background}%, #162D3D)`,
+                }}
+                className="parallax"
+            >
+                <img
+                    ref={mountain3}
+                    className="mountain-3"
+                    src="/parallax/mountain3.svg"
+                />
+                <img
+                    ref={mountain2}
+                    className="mountain-2"
+                    src="/parallax/mountain-2.svg"
+                />
+                <img
+                    ref={mountain1}
+                    className="mountain-1"
+                    src="/parallax/mountain-1.svg"
+                />
+                <img ref={sun} className="sun" src="/parallax/sun.svg" />
+                <img
+                    ref={cloudsBottom}
+                    className="clouds-bottom"
+                    src="/parallax/cloud-bottom.svg"
+                />
+                <img
+                    ref={cloudsLeft}
+                    className="clouds-left"
+                    src="/parallax/clouds-left.svg"
+                />
+                <img
+                    ref={cloudsRight}
+                    className="clouds-right"
+                    src="/parallax/clouds-right.svg"
+                />
+                <img ref={stars} className="stars" src="/parallax/stars.svg" />
+                <div ref={copy} className="absolute bottom-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 text-(--secondaryColor) flex flex-col opacity-0">
+                    <div className="relative h-full">
+                        {/* Top border */}
+                        <div className="h-5 flex flex-col gap-2">
+                            <div className="h-1 md:h-1.5 background-red shadow-lg shadow-red-600/50"></div>
+                            <div className="h-0.5 md:h-1 background-red mt-1.5 shadow-md shadow-red-700/50"></div>
+                        </div>
+
+                        {/* Main text */}
+                        <div className="relative px-8 py-6">
+                            <h1
+                                className="font-bold text-5xl md:text-7xl lg:text-[7rem] xl:text-[10rem] tracking-wider text-transparent bg-clip-text background-red relative stranger-things text-stroke"
+                            >
+                                HACKINVERSE
+                            </h1>
+
+                            {/* Additional outline effect */}
+                            <div className="absolute inset-0 px-8 py-6 pointer-events-none">
+                                <h1
+                                    className="font-bold text-5xl md:text-7xl lg:text-[7rem] xl:text-[10rem] tracking-wider text-transparent stranger-things text-stroke"
+                                >
+                                    HACKINVERSE
+                                </h1>
+                            </div>
+                        </div>
+
+                        {/* Bottom border */}
+                        <div className="h-5 flex flex-col gap-2">
+                            <div className="h-0.5 md:h-1 background-red mb-1.5 shadow-md shadow-red-700/50"></div>
+                            <div className="h-1 md:h-1.5 background-red shadow-lg shadow-red-600/50"></div>
+                        </div>
+                    </div>  
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Parallax
+export default Parallax;
