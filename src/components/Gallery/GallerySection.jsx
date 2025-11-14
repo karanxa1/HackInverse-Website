@@ -110,7 +110,6 @@ const GallerySection = () => {
             onMouseDown={(e) => handleStart(e, frame.id)}
             onMouseMove={(e) => handleMove(e, frame.id)}
             onMouseUp={() => handleEnd(frame.id)}
-            onMouseLeave={() => handleEnd(frame.id)}
             onTouchStart={(e) => handleStart(e, frame.id)}
             onTouchMove={(e) => handleMove(e, frame.id)}
             onTouchEnd={() => handleEnd(frame.id)}
@@ -118,6 +117,7 @@ const GallerySection = () => {
               e.currentTarget.style.filter = 'drop-shadow(0 12px 25px rgba(0, 0, 0, 0.6))';
             }}
             onMouseLeave={(e) => {
+              handleEnd(frame.id);
               if (!dragState.current[frame.id]) {
                 e.currentTarget.style.filter = 'drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5))';
               }
