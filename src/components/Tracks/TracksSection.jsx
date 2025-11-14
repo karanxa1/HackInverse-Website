@@ -6,26 +6,44 @@ import shadowsImage from "../../assets/shadows.png";
 const TracksSection = () => {
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#9E1C1E] text-center font-['Cinzel_Decorative'] text-white">
-      
+
+      {/* Top Bar */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-black z-30"></div>
 
+      {/* MAIN BACKGROUND WRAPPER */}
       <div
-        className="relative flex flex-col items-center justify-center w-full px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 pt-[52vh] pb-[10vh] z-10" 
+        className="
+          relative flex flex-col items-center justify-center w-full 
+          px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 
+          pt-[52vh] pb-[10vh] z-10
+
+          /* MOBILE FIXES ONLY */
+          max-sm:pt-[46vh]
+
+          /* Mobile: smaller trees + MUCH smaller shadows */
+          max-sm:bg-[length:38vw_30vh,38vw_30vh,45vw_14vh]
+          max-sm:bg-[left_top,right_top,center_top]
+        "
         style={{
           backgroundImage: `url(${topLeftTreeImage}), url(${topRightTreeImage}), url(${shadowsImage})`,
           backgroundRepeat: "no-repeat, no-repeat, no-repeat",
+
+          /* Desktop positions */
           backgroundPosition: "left top, right top, center top",
-          backgroundSize: "20% auto, 20% auto, 30% auto",
         }}
       >
+
         {/* Heading */}
-        <h1 className="relative z-10 mb-[8vh] text-[clamp(3rem,8vw,7rem)] font-semibold uppercase tracking-[0.12em] text-transparent [-webkit-text-stroke:3px_#f4e9e9]"style={{ fontFamily: 'StrangerThingsOutlined' }}>
+        <h1
+          className="relative z-10 mb-[8vh] text-[clamp(3rem,8vw,7rem)] font-semibold uppercase tracking-[0.12em] text-transparent [-webkit-text-stroke:3px_#f4e9e9]"
+          style={{ fontFamily: "StrangerThingsOutlined" }}
+        >
           TRACKS
           <div className="relative bottom-[1.5vh] left-1/2 h-[3.7px] w-[38vw] -translate-x-1/2 bg-[#f4e9e9]"></div>
           <div className="relative bottom-[0.5vh] left-1/2 h-[3.7px] w-[38vw] -translate-x-1/2 bg-[#f4e9e9]"></div>
         </h1>
 
-        {/* Tracks Content */}
+        {/* TRACKS CONTENT */}
         <div className="relative z-10 flex w-full max-w-[1600px] flex-wrap justify-center gap-[4vw] px-4 md:flex-nowrap">
           
           <div className="flex min-h-[360px] flex-1 flex-col items-center justify-start p-2">
@@ -65,6 +83,7 @@ const TracksSection = () => {
               strategies and tools.
             </p>
           </div>
+
         </div>
       </div>
     </div>
