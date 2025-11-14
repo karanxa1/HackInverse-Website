@@ -10,21 +10,70 @@ import Calender from "./components/Calender.jsx";
 import AboutSection from "./components/AboutSection.jsx";
 import Footer from "./components/Footer.jsx";
 import FAQ from "./components/FAQ.jsx";
+import { useRef } from "react";
+import Navbar from "./components/Navbar.jsx";
 
 function App() {
+    const scrollToView = (ref) => {
+        if (ref.current) {
+            ref.current.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }
+    };
+
     return (
         <>
-            <div className="w-full">
-                <Calender />
-                <AboutSection />
-                <SponsorsSection />
-                <GallerySection />
-                <PrizesSection />
-                <Description />
-                <TracksSection />
-                <ElevatorAnimation />
-                <Venue />
-                <FAQ />
+            <div className="min-h-screen background-dark overflow-x-hidden">
+                {/* Navbar */}
+                <header className="fixed top-0 left-0 right-0 z-50">
+                    <Navbar scrollToView={scrollToView} refs={{}} />
+                </header>
+
+                <main className="pt-20">
+                    <section>
+                        <Calender />
+                    </section>
+
+                    <section>
+                        <AboutSection />
+                    </section>
+
+                    <section>
+                        <SponsorsSection />
+                    </section>
+                    
+                    <section>
+                        <GallerySection />
+                    </section>
+
+                    <section>
+                        <PrizesSection />
+                    </section>
+
+                    <section>
+                        <Description />
+                    </section>
+
+                    <section>
+                        <TracksSection />
+                    </section>
+
+                    <section>
+                        <ElevatorAnimation />
+                    </section>
+
+                    <section>
+                        <Venue />
+                    </section>
+
+                    <section>
+                        <FAQ />
+                    </section>
+                </main>
+
+                {/* Footer */}
                 <Footer />
             </div>
         </>
