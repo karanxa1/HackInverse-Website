@@ -1,1 +1,10 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+    font-family: 'StrangerThingsOutlined';
+    src: url('./assets/fonts/Stranger Things Outlined.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }

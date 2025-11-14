@@ -1,4 +1,4 @@
-import "./App.css";
+import "./index.css";
 import GallerySection from "./components/Gallery/GallerySection";
 import PrizesSection from "./components/Prizes/PrizesSection";
 import Description from "./components/Description/Description";
