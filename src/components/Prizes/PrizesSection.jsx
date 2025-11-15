@@ -20,7 +20,7 @@ const PrizesSection = () => {
 
   return (
     <section
-      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#1a1a1a] px-2 text-center text-white font-cinzel-decorative"
+      className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#222222] px-2 text-center text-white font-cinzel-decorative"
       style={{
         backgroundImage: `url(${patternBg})`,
         backgroundRepeat: "no-repeat",
@@ -30,39 +30,83 @@ const PrizesSection = () => {
     >
       {/* ===== HEADING ===== */}
       <h1
-        className="prizes-heading top-5 relative mb-6 inline-block text-[clamp(50px,7vw,140px)] font-medium uppercase leading-none tracking-[0.15em] text-[#1a1818]
-        [text-shadow:0_0_5px_#c11c1c,0_0_10px_#c11c1c,0_0_20px_#c11c1c,0_0_40px_#c11c1c,0_0_60px_#c11c1c,0_0_80px_#c11c1c]
-        [-webkit-text-stroke:3px_#c11c1c]"
-        style={{ fontFamily: "StrangerThingsOutlined" }}
-      >
-        PRIZES
+  className="prizes-heading mx-auto mt-15 mb-6 inline-block
+  text-[clamp(30px,5vw,100px)] font-medium uppercase leading-none 
+  tracking-[0.10em] font-bold [-webkit-text-stroke:2px_#C83639]"
+  style={{ fontFamily: '"Merriweather", sans-serif',color: '#222222', textShadow: '0 0 10px #c11c1c, 0 0 20px #c11c1c' }}>
+  PRIZES
+  {/* FIRST underline */}
+<span
+  className="
+    block mx-auto
 
-        <span
-          className="block mt-[1.2vw] h-[0.5vh] w-[clamp(210px,35vw,580px)] bg-[#C83639]"
-          style={{
-            boxShadow:
-              "0 0 5px #c11c1c, 0 0 10px #c11c1c, 0 0 20px #c11c1c, 0 0 40px #c11c1c, 0 0 60px #c11c1c, 0 0 80px #c11c1c",
-          }}
-        ></span>
+    mt-2
+    h-[3px]
+    w-[95%]
+    
+    sm:mt-[0.5vw]
+    sm:h-[0.4vh]
+    sm:w-[60%]
+    sm:max-w-[450px]
+    sm:min-w-[350px]
 
-        <span
-          className="block mt-[0.8vw] h-[0.5vh] w-[clamp(210px,35vw,580px)] bg-[#C83639]"
-          style={{
-            boxShadow:
-              "0 0 5px #c11c1c, 0 0 10px #c11c1c, 0 0 20px #c11c1c, 0 0 40px #c11c1c, 0 0 60px #c11c1c, 0 0 80px #c11c1c",
-          }}
-        ></span>
-      </h1>
+    bg-[#C83639]
+  "
+  style={{
+    boxShadow: `
+      0 4px 10px #A31212,
+      0 8px 20px #A31212,
+      0 12px 40px #A31212
+    `
+  }}
+></span>
+
+{/* SECOND underline */}
+<span
+  className="
+    block mx-auto
+
+    mt-1
+    h-[3px]
+    w-[95%]
+
+    sm:mt-[0.4vw]
+    sm:h-[0.4vh]
+    sm:w-[60%]
+    sm:max-w-[450px]
+    sm:min-w-[350px]
+
+    bg-[#C83639]
+  "
+  style={{
+    boxShadow: `
+      0 4px 10px #A31212,
+      0 8px 20px #A31212,
+      0 12px 40px #A31212
+    `
+  }}
+></span>
+</h1>
+
 
       {/* ===== PRIZE CARDS ===== */}
       <div className="mt-[5vw] flex max-w-[95vw] flex-wrap items-center justify-center gap-[8vw] lg:gap-[6vw] md:gap-[5vw] sm:gap-[4vw] xs:gap-[3vw]">
         {prizes.map((p, index) => (
-          <div
-            className={`flex flex-col items-center justify-center text-center ${
-              index === 0 ? "translate-x-[-2vw]" : ""
-            } ${index === 2 ? "translate-x-[2vw]" : ""}`}
-            key={index}
-          >
+         <div
+         className={`
+           flex flex-col items-center justify-center text-center
+       
+           /* MOBILE ORDER ONLY */
+           ${index === 1 ? "order-1 md:order-none" : ""}
+           ${index === 0 ? "order-2 md:order-none" : ""}
+           ${index === 2 ? "order-3 md:order-none" : ""}
+       
+           /* DESKTOP TRANSLATIONS (unchanged) */
+           lg:${index === 0 ? "translate-x-[-2vw]" : ""}
+           lg:${index === 2 ? "translate-x-[2vw]" : ""}
+         `}
+         key={index}
+       >
             {/* ===== BORDER + INNER IMAGE ===== */}
             <div
   className="relative flex items-center justify-center rounded-full z-10 flex-shrink-0 overflow-visible"
