@@ -7,7 +7,7 @@ export default function Description() {
   return (
     <div
       className="
-        relative min-h-screen w-full bg-[#1a1a1a] overflow-hidden text-white font-inter 
+        relative min-h-screen w-full bg-[#222222] overflow-hidden text-white font-inter 
         flex flex-col items-center justify-start px-4 sm:px-6 md:px-8 lg:px-16
 
         /* MOBILE: less top gap */
@@ -21,8 +21,6 @@ export default function Description() {
       <div
         className="
           text-center z-20 
-          
-          /* MOBILE: reduce space between text & trees */
           mb-[4vh] 
           sm:mb-[12vh] md:mb-[14vh] lg:mb-[16vh]
 
@@ -32,18 +30,16 @@ export default function Description() {
         <h1
           className="
             text-[#b30000] font-bold 
-            
-            /* MOBILE increased size */
             text-[2.2rem]
 
-            sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 
+            sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 
             leading-tight
           "
         >
           And Many More...
         </h1>
 
-        <p className="text-[#9a9a9a] text-base sm:text-lg md:text-2xl lg:text-4xl leading-snug max-w-xl mx-auto mt-3 sm:mt-4 lg:mt-5 font-light">
+        <p className="text-[#9a9a9a] text-base sm:text-lg md:text-2xl lg:text-2xl leading-snug max-w-xl mx-auto mt-3 sm:mt-4 lg:mt-5 font-light">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. Lorem Ipsum has been the industry's standard dummy text ever
           since the 1500s.
@@ -56,7 +52,7 @@ export default function Description() {
           absolute bottom-0 left-0
 
           /* responsive sizes */
-          max-sm:w-[38vw] max-sm:h-[30vh]
+          max-sm:w-[33vw] max-sm:h-[27vh]
           w-[65vw] h-[35vh]
           sm:w-[50vw] sm:h-[45vh]
           md:w-[40vw] md:h-[70vh]
@@ -76,7 +72,7 @@ export default function Description() {
         className="
           absolute bottom-0 right-0
 
-          max-sm:w-[38vw] max-sm:h-[30vh]
+          max-sm:w-[33vw] max-sm:h-[27vh]
           w-[65vw] h-[35vh]
           sm:w-[50vw] sm:h-[45vh]
           md:w-[40vw] md:h-[70vh]

@@ -16,12 +16,8 @@ const TracksSection = () => {
           relative flex flex-col items-center justify-center w-full 
           px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 
           pt-[52vh] pb-[10vh] z-10
-
-          /* MOBILE FIXES ONLY */
           max-sm:pt-[46vh]
-
-          /* Mobile: smaller trees + MUCH smaller shadows */
-          max-sm:bg-[length:38vw_30vh,38vw_30vh,45vw_14vh]
+          max-sm:bg-[length:31vw_25vh,31vw_25vh,45vw_14vh]
           max-sm:bg-[left_top,right_top,center_top]
         "
         style={{
@@ -35,12 +31,12 @@ const TracksSection = () => {
 
         {/* Heading */}
         <h1
-          className="relative z-10 mb-[8vh] text-[clamp(3rem,8vw,7rem)] font-semibold uppercase tracking-[0.12em] text-transparent [-webkit-text-stroke:3px_#f4e9e9]"
-          style={{ fontFamily: "StrangerThingsOutlined" }}
+          className="relative z-10 mb-[8vh] text-[clamp(30px,5vw,100px)] font-semibold uppercase tracking-[0.10em] text-transparent [-webkit-text-stroke:3px_#f4e9e9]"
+          style={{fontFamily: '"Merriweather", sans-serif'}}
         >
           TRACKS
-          <div className="relative bottom-[1.5vh] left-1/2 h-[3.7px] w-[38vw] -translate-x-1/2 bg-[#f4e9e9]"></div>
-          <div className="relative bottom-[0.5vh] left-1/2 h-[3.7px] w-[38vw] -translate-x-1/2 bg-[#f4e9e9]"></div>
+          <div className="relative bottom-[1.4vh] left-1/2 h-[3.7px] w-[20vw] -translate-x-1/2 bg-[#f4e9e9] sm:w-[25vw] w-[40vw] sm:mt-0 mt-3"></div>
+          <div className="relative bottom-[0.5vh] left-1/2 h-[3.7px] w-[20vw] -translate-x-1/2 bg-[#f4e9e9] sm:w-[25vw] w-[40vw] sm:mt-0 mt-4px"></div>
         </h1>
 
         {/* TRACKS CONTENT */}
