@@ -1,13 +1,13 @@
 import React from "react";
 
 import prize1Inner from "../../assets/1st-inner.png";
-import prize1Border from "../../assets/Prizeborder.png";
+import prize1Border from "../../assets/PrizeBorder.png";
 
 import prize2Inner from "../../assets/2nd-inner.png";
-import prize2Border from "../../assets/Prizeborder.png";
+import prize2Border from "../../assets/PrizeBorder.png";
 
 import prize3Inner from "../../assets/3rd-inner.png";
-import prize3Border from "../../assets/Prizeborder.png";
+import prize3Border from "../../assets/PrizeBorder.png";
 
 import patternBg from "../../assets/BgPattern.png";
 
