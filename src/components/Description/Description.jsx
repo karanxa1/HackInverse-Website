@@ -39,10 +39,9 @@ export default function Description() {
           And Many More...
         </h1>
 
-        <p className="text-[#9a9a9a] text-base sm:text-lg md:text-2xl lg:text-2xl leading-snug max-w-xl mx-auto mt-3 sm:mt-4 lg:mt-5 font-light">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s.
+        <p className="italic text-[#9a9a9a] text-base sm:text-lg md:text-2xl lg:text-2xl leading-snug max-w-xl mx-auto mt-3 sm:mt-4 lg:mt-5 font-light">
+          Build, pitch, and launch — prizes, mentorship, and startup support await.
+
         </p>
       </div>
 

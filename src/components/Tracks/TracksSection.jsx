@@ -49,7 +49,7 @@ const TracksSection = () => {
             <h3 className="mb-5 inline-block bg-transparent text-[clamp(1.7rem,2.7vw,2.7rem)] font-bold text-black font-['Roboto_Condensed']">
               Artificial Intelligence
             </h3>
-            <p className="text-[clamp(2rem,2.2vw,2.3rem)] font-['Roboto_Condensed']">
+            <p className="text-[clamp(1.5rem,2.2vw,2.3rem)] font-['Roboto_Condensed']">
               Building models for prediction, classification, natural language
               processing, or computer vision.
             </p>
@@ -62,7 +62,7 @@ const TracksSection = () => {
             <h3 className="mb-5 inline-block bg-transparent text-[clamp(1.7rem,2.7vw,2.7rem)] font-bold text-black font-['Roboto_Condensed']">
               Web Development
             </h3>
-            <p className="text-[clamp(2rem,2.2vw,2.3rem)] font-['Roboto_Condensed']">
+            <p className="text-[clamp(1.5rem,2.2vw,2.3rem)] font-['Roboto_Condensed']">
               Creating responsive, scalable, and interactive web applications.
             </p>
           </div>
@@ -74,7 +74,7 @@ const TracksSection = () => {
             <h3 className="mb-5 inline-block bg-transparent text-[clamp(1.7rem,2.7vw,2.7rem)] font-bold text-black font-['Roboto_Condensed']">
               Cybersecurity
             </h3>
-            <p className="text-[clamp(2rem,2.2vw,2.3rem)] font-['Roboto_Condensed']">
+            <p className="text-[clamp(1.5rem,2.2vw,2.3rem)] font-['Roboto_Condensed']">
               Protecting systems and networks through innovative security
               strategies and tools.
             </p>
