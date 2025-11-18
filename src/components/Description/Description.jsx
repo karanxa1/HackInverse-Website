@@ -9,8 +9,8 @@ export default function Description() {
   const sectionRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
-      target: sectionRef,
-      offset: ["start end", "end start"],
+    target: sectionRef,
+    offset: ["start end", "end start"],
   });
 
   const cyclistsXRaw = useTransform(scrollYProgress, [0.4, 1], ["100vw", "-70vw"]);

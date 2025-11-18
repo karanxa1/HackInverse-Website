@@ -177,7 +177,7 @@ const GallerySection = () => {
             }}
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{
               duration: 0.8,
               delay: frame.isCenter ? 0 : index * 0.1,
