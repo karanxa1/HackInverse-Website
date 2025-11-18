@@ -23,6 +23,24 @@ const TracksSection = () => {
     damping: 40,
     mass: 1,
   })
+  const tracks = [
+    {
+      title: "Artificial Intelligence",
+      description: "Building models for prediction, classification, natural language processing, or computer vision.",
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000", // Placeholder or use local assets if available
+    },
+    {
+      title: "Web Development",
+      description: "Creating responsive, scalable, and interactive web applications.",
+      image: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&q=80&w=1000",
+    },
+    {
+      title: "Cybersecurity",
+      description: "Protecting systems and networks through innovative security strategies and tools.",
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000",
+    },
+  ];
+
   return (
     <div ref={sectionRef} className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#9E1C1E] text-center font-['Cinzel_Decorative'] text-white">
 
@@ -67,30 +85,41 @@ const TracksSection = () => {
 
 
         {/* Heading */}
-        <h1
-          className="relative z-10 mb-[8vh] text-[clamp(30px,5vw,100px)] font-semibold uppercase tracking-[0.10em] text-transparent [-webkit-text-stroke:3px_#f4e9e9]"
-          style={{ fontFamily: '"Merriweather", sans-serif' }}
-        >
-          TRACKS
-          <div className="relative bottom-[1.4vh] left-1/2 h-[3.7px] w-[20vw] -translate-x-1/2 bg-[#f4e9e9] sm:w-[25vw] w-[40vw] sm:mt-0 mt-3"></div>
-          <div className="relative bottom-[0.5vh] left-1/2 h-[3.7px] w-[20vw] -translate-x-1/2 bg-[#f4e9e9] sm:w-[25vw] w-[40vw] sm:mt-0 mt-4px"></div>
-        </h1>
+        <ScrollReveal>
+          <h1
+            className="relative z-10 mb-[8vh] text-[clamp(30px,5vw,100px)] font-semibold uppercase tracking-[0.10em] text-transparent [-webkit-text-stroke:3px_#f4e9e9]"
+            style={{ fontFamily: '"Merriweather", sans-serif' }}
+          >
+            <GlitchText text="TRACKS" />
+            <div className="relative bottom-[1.4vh] left-1/2 h-[3.7px] w-[20vw] -translate-x-1/2 bg-[#f4e9e9] sm:w-[25vw] w-[40vw] sm:mt-0 mt-3"></div>
+            <div className="relative bottom-[0.5vh] left-1/2 h-[3.7px] w-[20vw] -translate-x-1/2 bg-[#f4e9e9] sm:w-[25vw] w-[40vw] sm:mt-0 mt-4px"></div>
+          </h1>
+        </ScrollReveal>
 
         {/* TRACKS CONTENT */}
         <div className="relative z-10 flex w-full max-w-[1600px] flex-wrap justify-center gap-[4vw] px-4 md:flex-nowrap">
-
-          <ScrollReveal delay={0.2} width="auto">
-          </h3>
-          <p className="text-[clamp(1.5rem,2.2vw,2.3rem)] font-['Roboto_Condensed']">
-            Protecting systems and networks through innovative security
-            strategies and tools.
-          </p>
+          {tracks.map((track, index) => (
+            <ScrollReveal key={index} delay={index * 0.2} width="auto">
+              <SpotlightCard className="bg-[#1a1a1a] rounded-xl p-6 w-[300px] md:w-[350px] flex flex-col items-center text-center min-h-[400px]">
+                <div className="w-full h-48 mb-6 overflow-hidden rounded-lg">
+                  <img
+                    src={track.image}
+                    alt={track.title}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4 neon-glow">
+                  {track.title}
+                </h3>
+                <p className="text-gray-300 text-base leading-relaxed font-['Roboto_Condensed']">
+                  {track.description}
+                </p>
+              </SpotlightCard>
+            </ScrollReveal>
+          ))}
         </div>
-      </ScrollReveal>
-
+      </div>
     </div>
-      </div >
-    </div >
   );
 };
 

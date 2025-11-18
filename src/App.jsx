@@ -16,6 +16,8 @@ import Navbar from "./components/Navbar.jsx";
 import HeroSection from "./components/HeroSection.jsx";
 import DetailsSection from "./components/DetailsSection.jsx";
 import ParticleBackground from "./components/Common/ParticleBackground.jsx";
+import CursorTrails from "./components/Common/CursorTrails.jsx";
+import FlashlightCursor from "./components/Common/FlashlightCursor.jsx";
 
 function App() {
     const { scrollYProgress } = useScroll();
@@ -43,6 +45,10 @@ function App() {
 
                 {/* Particle Background */}
                 <ParticleBackground />
+
+                {/* Dynamic Cursor Effects */}
+                <CursorTrails />
+                <FlashlightCursor />
 
                 {/* Navbar */}
                 <header className="fixed top-0 left-0 right-0 z-50">
