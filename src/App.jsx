@@ -15,7 +15,7 @@ import { motion, useScroll } from "framer-motion";
 import Navbar from "./components/Navbar.jsx";
 import HeroSection from "./components/HeroSection.jsx";
 import DetailsSection from "./components/DetailsSection.jsx";
-import ParticleBackground from "./components/Common/ParticleBackground.jsx";
+
 import CursorTrails from "./components/Common/CursorTrails.jsx";
 import FlashlightCursor from "./components/Common/FlashlightCursor.jsx";
 
@@ -40,11 +40,6 @@ function App() {
                     style={{ scaleX: scrollYProgress }}
                 />
 
-                {/* Vignette Overlay */}
-                <div className="fixed inset-0 pointer-events-none z-[40] bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)] mix-blend-multiply" />
-
-                {/* Particle Background */}
-                <ParticleBackground />
 
                 {/* Dynamic Cursor Effects */}
                 <CursorTrails />
@@ -56,7 +51,7 @@ function App() {
                 </header>
 
                 <main className="">
-                    <section className=" md:mb-40">
+                    <section id="home" className=" md:mb-40">
                         <HeroSection />
                     </section>
 
@@ -68,11 +63,11 @@ function App() {
                         <Calender />
                     </section>
 
-                    <section className="mb-10 md:mb-20 mx-6 md:mx-0">
+                    <section id="about" className="mb-10 md:mb-20 mx-6 md:mx-0">
                         <AboutSection />
                     </section>
 
-                    <section>
+                    <section id="sponsors">
                         <SponsorsSection />
                     </section>
 
@@ -80,7 +75,7 @@ function App() {
                         <GallerySection />
                     </section>
 
-                    <section>
+                    <section id="prizes">
                         <PrizesSection />
                     </section>
 
@@ -88,7 +83,7 @@ function App() {
                         <Description />
                     </section>
 
-                    <section>
+                    <section id="tracks">
                         <TracksSection />
                     </section>
 
@@ -100,7 +95,7 @@ function App() {
                         <Venue />
                     </section>
 
-                    <section>
+                    <section id="faq">
                         <FAQ />
                     </section>
                 </main>
