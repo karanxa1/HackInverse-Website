@@ -14,3 +14,34 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Deployment
+
+### Docker
+
+This project includes a `Dockerfile` and `docker-compose.yml` for easy containerization and deployment.
+
+#### Build and Run Locally
+
+To build and run the application using Docker Compose:
+
+```bash
+docker-compose up --build
+```
+
+The application will be accessible at `http://localhost:8080`.
+
+### Digital Ocean App Platform
+
+1.  Push your code to a GitHub repository.
+2.  Create a new App in Digital Ocean App Platform.
+3.  Select your repository.
+4.  Digital Ocean should automatically detect the `Dockerfile`.
+5.  Configure the HTTP Port to `80`.
+6.  Deploy!
+
+### Digital Ocean Droplet
+
+1.  Create a Droplet with Docker installed.
+2.  Clone your repository to the Droplet.
+3.  Run `docker-compose up -d --build`.
