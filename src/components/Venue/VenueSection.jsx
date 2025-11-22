@@ -1,6 +1,7 @@
 import React from 'react';
 import tvCornerImage from '../../assets/TvCorner.png';
 import tvDisplayImage from '../../assets/TvDisplay.png';
+import MagneticButton from '../Common/MagneticButton';
 
 const Venue = () => {
   return (
@@ -24,12 +25,12 @@ const Venue = () => {
 
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl w-full flex flex-col lg:flex-row items-center justify-start lg:justify-between gap-8 lg:gap-8 xl:gap-16">
-        
+
         {/* Text Section */}
         <div className="flex flex-col gap-8 text-white text-center lg:text-left lg:w-1/2">
           {/* Header */}
           <div className="flex flex-col items-center lg:items-start gap-4">
-            <h1 className="text-[clamp(3rem,9vw,7rem)] sm:text-[clamp(4rem,9vw,7rem)] font-extrabold tracking-[9px] uppercase leading-none [color:transparent] [-webkit-text-stroke:2px_#fff] md:[-webkit-text-stroke:4px_#fff] font-cinzel-decorative" style={{fontFamily: '"Merriweather", sans-serif'}}>
+            <h1 className="text-[clamp(3rem,9vw,7rem)] sm:text-[clamp(4rem,9vw,7rem)] font-extrabold tracking-[9px] uppercase leading-none [color:transparent] [-webkit-text-stroke:2px_#fff] md:[-webkit-text-stroke:4px_#fff] font-cinzel-decorative" style={{ fontFamily: '"Merriweather", sans-serif' }}>
               VENUE
             </h1>
 
@@ -50,9 +51,9 @@ const Venue = () => {
           </div>
 
           {/* Button */}
-          <button className="bg-white text-black text-xl md:text-2xl font-semibold py-3 px-8 sm:py-4 sm:px-10 rounded-full shadow-lg self-center lg:self-start transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
-             Request the Map
-          </button>
+          <MagneticButton className="bg-white text-black text-xl md:text-2xl font-semibold py-3 px-8 sm:py-4 sm:px-10 rounded-full shadow-lg self-center lg:self-start transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50">
+            Request the Map
+          </MagneticButton>
         </div>
 
         {/* TV Section */}

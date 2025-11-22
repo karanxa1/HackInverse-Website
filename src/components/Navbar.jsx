@@ -52,24 +52,27 @@ export default function Navbar({ scrollToView, refs }) {
         <motion.nav
             variants={navbarVariants}
             animate={showNav ? "visible" : "hidden"}
-            className="sticky top-0 w-full py-4 z-50 sofia-sans-extra-condensed"
+            className="fixed top-0 w-full py-4 z-50 sofia-sans-extra-condensed backdrop-blur-sm"
         >
-            <div className="container mx-auto px-4 md:max-w-4xl">
-                <div className="relative flex items-center justify-between bg-black rounded-[61px] py-1 md:py-3 px-5">
+            <div className="container mx-auto px-4 max-w-7xl">
+                <div className="relative flex items-center justify-between bg-black/80 border border-white/10 hover:border-red-500/30 transition-colors duration-300 backdrop-blur-md rounded-2xl py-2 md:py-3 px-6 shadow-lg shadow-red-900/5">
                     {/* Logo and brand */}
                     <div className="flex items-center md:w-auto w-full md:justify-start justify-between">
-                        <img
-                            src="/icon.svg"
-                            alt="HackInverse Logo"
-                            className="h-12 w-auto rounded-full"
-                        />
+                        <a href="#" className="flex items-center gap-2 group">
+                            <img
+                                src="/icon.svg"
+                                alt="HackInverse Logo"
+                                className="h-10 w-auto rounded-full group-hover:scale-110 transition-transform duration-300 border border-white/10"
+                            />
+                            <span className="text-white font-stranger-things text-2xl tracking-widest hidden sm:block text-stroke">HACKINVERSE</span>
+                        </a>
 
                         <div className="flex items-center md:hidden">
                             {/* Mobile menu button with animation */}
                             <div className="md:hidden">
                                 <motion.button
                                     onClick={toggleMenu}
-                                    className="text-white focus:outline-none p-2 pr-0"
+                                    className="text-white focus:outline-none p-2 pr-0 hover:text-[#FF0505] transition-colors"
                                     whileTap={{ scale: 0.95 }}
                                     transition={{ duration: 0.1 }}
                                 >
@@ -140,34 +143,24 @@ export default function Navbar({ scrollToView, refs }) {
                     </div>
 
                     {/* Navigation links - Desktop */}
-                    <div className="hidden md:flex items-center justify-evenly w-[70%] space-x-8">
-                        <span className="text-white hover:text-gray-300 text-xl font-medium albert_sans cursor-pointer">
-                            Home
-                        </span>
-                        <a
-                            href="#"
-                            className="text-white hover:text-gray-300 text-xl font-medium albert_sans"
-                        >
-                            About
-                        </a>
-                        <a
-                            href="#"
-                            className="text-white hover:text-gray-300 text-xl font-medium albert_sans"
-                        >
-                            Sponsors
-                        </a>
-                        <a
-                            href="#"
-                            className="text-white hover:text-gray-300 text-xl font-medium albert_sans"
-                        >
-                            Venue
-                        </a>
-                        <span className="text-white hover:text-gray-300 text-xl font-medium albert_sans cursor-pointer">
-                            Agenda
-                        </span>
-                        <span className="text-white hover:text-gray-300 text-xl font-medium albert_sans cursor-pointer">
-                            Teams
-                        </span>
+                    <div className="hidden md:flex items-center justify-end space-x-8 flex-1 ml-8">
+                        {[
+                            { name: "Home", href: "#" },
+                            { name: "About", href: "#about" },
+                            { name: "Tracks", href: "#tracks" },
+                            { name: "Prizes", href: "#prizes" },
+                            { name: "Sponsors", href: "#sponsors" },
+                            { name: "FAQ", href: "#faq" },
+                        ].map((item) => (
+                            <a
+                                key={item.name}
+                                href={item.href}
+                                className="text-gray-300 hover:text-white text-sm font-alata uppercase tracking-widest transition-colors duration-300 relative group"
+                            >
+                                {item.name}
+                                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#FF0505] transition-all duration-300 group-hover:w-full shadow-[0_0_10px_#FF0505]"></span>
+                            </a>
+                        ))}
                     </div>
                 </div>
 
@@ -175,7 +168,7 @@ export default function Navbar({ scrollToView, refs }) {
                 <AnimatePresence>
                     {isMenuOpen && (
                         <motion.div
-                            className="md:hidden mx-4 absolute top-full left-0 right-0 mt-2 py-5 bg-black rounded-[20px] google-gradient-border overflow-hidden"
+                            className="md:hidden mx-4 absolute top-full left-0 right-0 mt-2 py-5 bg-black/95 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl shadow-red-900/10"
                             initial={{ opacity: 0, y: -20, scale: 0.95 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: -20, scale: 0.95 }}
@@ -188,7 +181,7 @@ export default function Navbar({ scrollToView, refs }) {
                             }}
                         >
                             <motion.div
-                                className="flex flex-col items-center space-y-4"
+                                className="flex flex-col items-center space-y-6"
                                 initial="closed"
                                 animate="open"
                                 exit="closed"
@@ -210,10 +203,10 @@ export default function Navbar({ scrollToView, refs }) {
                                 {[
                                     "Home",
                                     "About",
+                                    "Tracks",
+                                    "Prizes",
                                     "Sponsors",
-                                    "Venue",
-                                    "Agenda",
-                                    "Teams",
+                                    "FAQ",
                                 ].map((item, index) => (
                                     <motion.div
                                         key={item}
@@ -237,8 +230,9 @@ export default function Navbar({ scrollToView, refs }) {
                                         }}
                                     >
                                         <a
-                                            href="#"
-                                            className="text-white hover:text-gray-300 text-xl albert_sans"
+                                            href={`#${item.toLowerCase() === 'home' ? '' : item.toLowerCase()}`}
+                                            onClick={() => setIsMenuOpen(false)}
+                                            className="text-white hover:text-[#FF0505] text-xl font-alata tracking-wide transition-colors duration-300"
                                         >
                                             {item}
                                         </a>
