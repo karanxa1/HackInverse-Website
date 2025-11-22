@@ -45,3 +45,18 @@ The application will be accessible at `http://localhost:8080`.
 1.  Create a Droplet with Docker installed.
 2.  Clone your repository to the Droplet.
 3.  Run `docker-compose up -d --build`.
+
+### Troubleshooting
+
+#### "failed to launch: determine start command" Error
+If you see this error on Digital Ocean, it means the platform is trying to build your app as a Node.js app instead of using the Dockerfile.
+
+**Solution 1 (Recommended):**
+1.  Go to your App settings in Digital Ocean.
+2.  Find the "Settings" tab for your component.
+3.  Look for "Build Phase" or "Source".
+4.  Change the "Build Command" or "Type" to use **Dockerfile**.
+5.  Save and Deploy.
+
+**Solution 2 (Fallback):**
+We have added a `start` script to `package.json` that runs `vite preview`. This allows the app to run even if Digital Ocean uses Node.js Buildpacks. However, using the Dockerfile (Solution 1) is more performant for production.
