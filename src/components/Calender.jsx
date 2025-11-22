@@ -54,7 +54,7 @@ const Calender = () => {
 
       <ScrollReveal delay={0.2}>
         <div className="flex items-center justify-center mt-10 md:mt-16 text-white overflow-x-auto px-4">
-          <div className="overflow-x-hidden flex flex-nowrap items-center justify-center gap-5 md:space-x-8 lg:space-x-10">
+          <div className="overflow-x-hidden flex flex-nowrap items-center justify-center gap-3 sm:gap-5 md:space-x-8 lg:space-x-10">
             <Timebox value={formatTime(timeLeft.days)} label="Days" />
             <div className="text-red-500 text-xl md:text-5xl font-bold flex flex-col justify-center -mt-2 md:-mt-8">
               :
@@ -78,10 +78,10 @@ const Calender = () => {
 function Timebox(props) {
   return (
     <div className="flex flex-col items-center">
-      <div className="bg-gray-200 text-black rounded-md shadow-[0_0_15px_#ff0000aa] w-12 h-18 md:w-24 md:h-28 lg:w-28 lg:h-34 flex items-center justify-center text-xl md:text-5xl font-bold hover:scale-90 hover:shadow-[0_0_30px_#ff0000dd] cursor-pointer">
+      <div className="bg-gray-200 text-black rounded-md shadow-[0_0_15px_#ff0000aa] w-14 h-20 sm:w-16 sm:h-24 md:w-24 md:h-28 lg:w-28 lg:h-34 flex items-center justify-center text-2xl sm:text-3xl md:text-5xl font-bold hover:scale-90 hover:shadow-[0_0_30px_#ff0000dd] cursor-pointer transition-transform duration-300">
         {props.value}
       </div>
-      <span className="mt-2 text-red-500 font-mono text-xs md:text-3xl">
+      <span className="mt-2 text-red-500 font-mono text-sm sm:text-base md:text-3xl font-bold">
         {props.label}
       </span>
     </div>
